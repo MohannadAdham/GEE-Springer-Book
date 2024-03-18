@@ -79,15 +79,12 @@ Map.addLayer(
     'Lights'
   );
   
-var lights23 = ee.Image('NOAA/DMSP-OLS/NIGHTTIME_LIGHTS/F102014'); 
-print('Nighttime lights', lights93);
-
-Map.addLayer( 
-  lights93, 
-  {
-    bands: ['stable_lights'],
-    min: 0,
-    max: 63 
-  },
-    'Lights 2014'
-  );
+var dataset = ee.ImageCollection('NOAA/DMSP-OLS/NIGHTTIME_LIGHTS')
+                  .filter(ee.Filter.date('2014-01-01', '2014-12-31'));
+var nighttimeLights = dataset.select('stable_lights');
+var nighttimeLightsVis = {
+  min: 3.0,
+  max: 60.0,
+};
+Map.setCenter(7.82, 49.1, 4);
+Map.addLayer(nighttimeLights, nighttimeLightsVis, 'Nighttime Lights 2014');
