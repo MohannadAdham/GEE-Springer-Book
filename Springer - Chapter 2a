@@ -1,0 +1,5 @@
+// Load an image
+var firstImage = ee.Image('LANDSAT/LT05/C02/T1_L2/LT05_118038_20000606');
+
+// Retrieve image metadata
+print(firstImage);
