@@ -86,7 +86,6 @@ var nighttimeLightsVis = {
   min: 3.0,
   max: 60.0,
 };
-Map.setCenter(7.82, 49.1, 4);
 Map.addLayer(nighttimeLights2010, nighttimeLightsVis, 'Nighttime Lights 2010');
   
 var dataset2013 = ee.ImageCollection('NOAA/DMSP-OLS/NIGHTTIME_LIGHTS')
