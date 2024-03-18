@@ -91,6 +91,6 @@ Map.addLayer(nighttimeLights2010, nighttimeLightsVis, 'Nighttime Lights 2010');
   
 var dataset2013 = ee.ImageCollection('NOAA/DMSP-OLS/NIGHTTIME_LIGHTS')
                   .filter(ee.Filter.date('2013-01-01', '2013-12-31'));
-var nighttimeLights = dataset2013.select('stable_lights');
+var nighttimeLights2013 = dataset2013.select('stable_lights');
 
 Map.addLayer(nighttimeLights2013, nighttimeLightsVis, 'Nighttime Lights 2013');
