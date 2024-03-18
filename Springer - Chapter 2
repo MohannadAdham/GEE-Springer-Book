@@ -67,7 +67,7 @@ print(firstImage);
 //   'Short wave false color');
   
 var lights93 = ee.Image('NOAA/DMSP-OLS/NIGHTTIME_LIGHTS/F101993'); 
-print('Nighttime lights', lights93);
+print('Nighttime lights 1993', lights93);
 
 Map.addLayer( 
   lights93, 
@@ -80,10 +80,10 @@ Map.addLayer(
   );
   
 var dataset = ee.ImageCollection('NOAA/DMSP-OLS/NIGHTTIME_LIGHTS')
-                  .filter(ee.Filter.date('2010-01-01', '2010-12-31'));
+                  .filter(ee.Filter.date('2013-01-01', '2013-12-31'));
 var nighttimeLights = dataset.select('stable_lights');
 var nighttimeLightsVis = {
   min: 3.0,
   max: 60.0,
 };
-Map.addLayer(nighttimeLights, nighttimeLightsVis, 'Nighttime Lights 2014');
+Map.addLayer(nighttimeLights, nighttimeLightsVis, 'Nighttime Lights 2013');
