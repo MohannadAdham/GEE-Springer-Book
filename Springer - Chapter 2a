@@ -39,3 +39,20 @@ Map.addLayer(
   0 // opacity
   );
   
+Map.addLayer(
+  firstImage,
+  {
+    bands: ['SR_B3', 'SR_B2', 'SR_B1'],
+    min: 8000,
+    max: 17000
+  },
+  'Natural Color');
+  
+Map.addLayer(
+  firstImage,
+  {
+    bands: ['SR_B3', 'SR_B2', 'SR_B1'],
+    min: 8000,
+    max: 17000
+  },
+  'False Color');
