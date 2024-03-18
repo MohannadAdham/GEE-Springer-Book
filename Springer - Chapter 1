@@ -6,3 +6,11 @@ var cityData = {
 
 print(cityData);
 
+var greet = function(name) {
+  return "Hello " + name;
+}
+
+print(greet("World!"));
+print(greet("Readers"));
+
+// This is a comment
