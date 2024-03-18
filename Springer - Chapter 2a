@@ -51,7 +51,7 @@ Map.addLayer(
 Map.addLayer(
   firstImage,
   {
-    bands: ['SR_B3', 'SR_B2', 'SR_B1'],
+    bands: ['SR_B4', 'SR_B3', 'SR_B2'],
     min: 8000,
     max: 17000
   },
