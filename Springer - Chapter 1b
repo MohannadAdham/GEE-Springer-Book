@@ -6,3 +6,7 @@ print(result);
 
 var yearList = ee.List.sequence(1980, 2020, 5);
 print(yearList);
+
+var mission = ee.String('Sentinel');
+var satellite = ee.String('2A');
+print(mission.cat(satellite));
