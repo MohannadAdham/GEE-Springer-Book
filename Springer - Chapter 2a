@@ -15,3 +15,28 @@ Map.addLayer(
   'Layer 1' // name to show in Layer Manager
   );
   
+Map.addLayer(
+  firstImage, 
+  {
+    bands: ['SR_B2'],
+    min: 8000,
+    max: 17000
+  },
+  'Layer 2',
+  0, // shown
+  1 // opacity
+  );
+  
+Map.addLayer(
+  firstImage, 
+  {
+    bands: ['SR_B3'],
+    min: 8000,
+    max: 17000
+  },
+  'Layer 3',
+  1, // shown
+  0 // opacity
+  );
+  
+  
