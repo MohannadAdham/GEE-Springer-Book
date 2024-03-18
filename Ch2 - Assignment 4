@@ -10,3 +10,20 @@ Map.addLayer(
   },
   'Natural Color');
   
+Map.addLayer(
+  image,
+  {
+    bands: ['SR_B4', 'SR_B3', 'SR_B2'],
+    min: 8000,
+    max: 1700
+  },
+  'False Color');
+  
+Map.addLayer(
+  image,
+  {
+    bands: ['SR_B5', 'SR_B4', 'SR_B2'],
+    min: 8000,
+    max: 17000
+  },
+  'Shortwave Infrared');
