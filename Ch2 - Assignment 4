@@ -15,7 +15,7 @@ Map.addLayer(
   {
     bands: ['SR_B4', 'SR_B3', 'SR_B2'],
     min: 8000,
-    max: 1700
+    max: 17000
   },
   'False Color');
   
