@@ -1,0 +1,8 @@
+var cityData = { 
+  'city': 'San Francisco', 
+  'coordinates': [-122.4194, 37.7749], 
+  'population': 873965 
+}; 
+
+print(cityData);
+
