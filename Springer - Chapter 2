@@ -65,3 +65,16 @@ Map.addLayer(
     max: 17000
   },
   'Short wave false color');
+  
+var lights93 = ee.Image('NOAA/DMSP-OLS/NIGHTTIME_LIGHTS/F101993'); 
+print('Nighttime lights', lights93);
+
+Map.addLayer( 
+  lights93, 
+  {
+    bands: ['stable_lights'],
+    min: 0,
+    max: 63 
+  },
+    'Lights'
+  );
