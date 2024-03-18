@@ -76,14 +76,21 @@ Map.addLayer(
     min: 0,
     max: 63 
   },
-    'Lights'
+    'Lights 1993'
   );
   
-var dataset = ee.ImageCollection('NOAA/DMSP-OLS/NIGHTTIME_LIGHTS')
-                  .filter(ee.Filter.date('2013-01-01', '2013-12-31'));
-var nighttimeLights = dataset.select('stable_lights');
+  var dataset2010 = ee.ImageCollection('NOAA/DMSP-OLS/NIGHTTIME_LIGHTS')
+                  .filter(ee.Filter.date('2010-01-01', '2010-12-31'));
+var nighttimeLights2010 = dataset.select('avg_vis');
 var nighttimeLightsVis = {
   min: 3.0,
   max: 60.0,
 };
-Map.addLayer(nighttimeLights, nighttimeLightsVis, 'Nighttime Lights 2013');
+Map.setCenter(7.82, 49.1, 4);
+Map.addLayer(nighttimeLights2010, nighttimeLightsVis, 'Nighttime Lights 2010');
+  
+var dataset2013 = ee.ImageCollection('NOAA/DMSP-OLS/NIGHTTIME_LIGHTS')
+                  .filter(ee.Filter.date('2013-01-01', '2013-12-31'));
+var nighttimeLights = dataset.select('stable_lights');
+
+Map.addLayer(nighttimeLights2013, nighttimeLightsVis, 'Nighttime Lights 2013');
