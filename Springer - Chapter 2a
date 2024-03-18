@@ -56,3 +56,12 @@ Map.addLayer(
     max: 17000
   },
   'False Color');
+  
+Map.addLayer(
+  firstImage,
+  {
+    bands: ['SR_B5', 'SR_B4', 'SR_B2'],
+    min: 8000,
+    max: 17000
+  },
+  'Short wave false color');
