@@ -41,7 +41,7 @@ Map.addLayer(
 print('The size of the Winter Landsat 8 image collection is:', landsatWinter.size());
 
 // Create an Earth Engine Point object
-var pointMN = ee.Geometry.Point([-93.79, 45.5]);
+var pointMN = ee.Geometry.Point([-93.79, 45.05]);
 
 // Filter the collection by location using the point
 var landsatMN = landsatWinter.filterBounds(pointMN);
