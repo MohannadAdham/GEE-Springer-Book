@@ -1,0 +1,14 @@
+// Collections of single images - Landsat 8 Surface Reflectance
+
+// Create an Earth Engine Point object over San Francisco
+var pointSF = ee.Geometry.Point([-122.44, 37.76]);
+
+// Import the Landsat 8 Surface Reflectance collection. 
+var landsat8SR = ee.ImageCollection('LANDSAT/LC08/C02/T1_L2');
+
+// Filter the collection and select the first image
+var landsat8SRimage = landsat8SR.filterDate('2014-03-18', '2014-03-19')
+                     .filterBounds(pointSF)
+                     .first();
+                     
+print('Landsat 8 Surface Reflectance image', landsat8SRimage);
