@@ -26,3 +26,23 @@ Map.addLayer(
   },
   'Landsat 8 SR');
 
+// Pre-made composites
+
+// Import a MODIS dataset of daily BRDF-corrected
+var modisDaily = ee.ImageCollection('MODIS/006/MCD43A4');
+
+// Filter the dataset to a recent date
+var modisDailyRecent = modisDaily.filterDate('2021-11-01');
+
+// Add the dataset to the map
+var modisVis = {
+    bands: [ 
+      'Nadir_Reflectance_Band1', 
+      'Nadir_Reflectance_Band4', 
+      'Nadir_Reflectance_Band3' 
+      ],
+      min: 0,
+      max: 4000
+  };
+  
+Map.addLayer(modisDailyRecent, modisVis, 'MODIS Dily Composite');
