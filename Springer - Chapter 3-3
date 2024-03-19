@@ -26,7 +26,7 @@ var era5Monthly = ee.ImageCollection('ECMWF/ERA5/MONTHLY');
 
 // Filter the dataset
 var era5MonthlyTemp = era5Monthly.select('mean_2m_air_temperature')
-    .filterDate('2018-01-01', '2018-01-31')
+    .filterDate('2018-08-01', '2018-08-31')
     .first();
 
 // Add the ERA dataset to the map.                  
