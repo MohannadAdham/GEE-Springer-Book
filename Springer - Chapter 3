@@ -65,7 +65,7 @@ print('The size of the Minneapolis Winter Landsat 8 image collection is: ', land
 var landsatFirst = landsatMN.first();
 
 // Display the first image in the filtered collection
-Map.centerObject(landsatFirst, 7);
+Map.centerObject(landsatFirst, 8);
 Map.addLayer(
   landsatFirst,
   {
