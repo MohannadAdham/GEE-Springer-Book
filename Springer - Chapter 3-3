@@ -2,7 +2,7 @@
 
 // Import a Sentinel-5 methane dataset
 var methane = ee.ImageCollection('COPERNICUS/S5P/OFFL/L3_CH4');
-print(methane);
+
 // Filter the methane dataset
 var methane2018 = methane.select('CH4_column_volume_mixing_ratio_dry_air')
   .filterDate('2018-11-28', '2018-11-29')
