@@ -18,5 +18,5 @@ var methaneVis = {
 // Center the map
 Map.centerObject(methane2018, 3);
 
-// Add the methane dataset to teh map
+// Add the methane dataset to the map
 Map.addLayer(methane2018, methaneVis, 'Methane');
