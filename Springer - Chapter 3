@@ -61,7 +61,19 @@ Map.addLayer(pointMN, {}, 'Point MN');
 
 print('The size of the Minneapolis Winter Landsat 8 image collection is: ', landsatMN.size());
 
+// Select the first image in the filtered collection
+var landsatFirst = landsatMN.first();
 
+// Display the first image in the filtered collection
+Map.centerObject(landsatFirst, 7);
+Map.addLayer(
+  landsatFirst,
+  {
+    bands: ['B4', 'B3', 'B2'],
+    min: 5000,
+    max: 15000
+  },
+  'First Landsat 8');
 
 
 
