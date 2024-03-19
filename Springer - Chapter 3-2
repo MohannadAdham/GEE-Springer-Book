@@ -46,3 +46,13 @@ var modisVis = {
   };
   
 Map.addLayer(modisDailyRecent, modisVis, 'MODIS Dily Composite');
+
+// Import the MODIS monthly burned areas dataset. 
+var modisMonthly = ee.ImageCollection('MODIS/006/MCD64A1');
+
+// Filter the dataset to a recent month during fire season
+var modisMonthlyRecent = modisMonthly.filterDate('2021-08-01');
+
+// Add the dataset to the map
+Map.addLayer(modisMonthlyRecent, {}, 'MODIS Monthly Burn');
+
