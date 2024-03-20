@@ -1,4 +1,6 @@
+///
 // Pre-classified Land Used Land Cover
+///
 
 // Import the ESA WorldCover dataset
 var worldCover = ee.ImageCollection('ESA/WorldCover/v100').first();
@@ -14,3 +16,17 @@ Map.addLayer(
   },
   'WorldCover');
   
+// Import the Hansen Global Forest Change dataset
+var globalForest = ee.Image('UMD/hansen/global_forest_change_2020_v1_8');
+
+// Create a visualization for tree cover in 2000
+var treeCoverViz = {
+  bands: ['treecover2000'],
+  min: 0,
+  max: 100,
+  palette: ['black', 'green']
+};
+
+// Add the 2000 tree cover image to the map
+Map.addLayer(globalForest, treeCoverViz, 'Hansen 2000 Tree Cover');
+
