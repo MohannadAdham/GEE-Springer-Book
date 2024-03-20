@@ -30,3 +30,14 @@ var treeCoverViz = {
 // Add the 2000 tree cover image to the map
 Map.addLayer(globalForest, treeCoverViz, 'Hansen 2000 Tree Cover');
 
+// Create a visualization for the year of tree loss over the past 20 years
+var treeLossYearViz = {
+  bands: ['lossyear'],
+  min: 0,
+  max: 20,
+  palette: ['yellow', 'red']
+};
+
+// Add the 2000-2020 tree cover loss image to the map
+Map.addLayer(globalForest, treeLossYearViz, '2000-2020 Year of Loss');
+
