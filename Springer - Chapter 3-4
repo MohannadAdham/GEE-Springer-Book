@@ -1,0 +1,16 @@
+// Pre-classified Land Used Land Cover
+
+// Import the ESA WorldCover dataset
+var worldCover = ee.ImageCollection('ESA/WorldCover/v100').first();
+
+// Center the map
+Map.centerObject(worldCover, 3);
+
+// Add the worldCover layer to the map
+Map.addLayer(
+  worldCover,
+  {
+    bands: ['Map']
+  },
+  'WorldCover');
+  
