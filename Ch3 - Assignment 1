@@ -6,9 +6,9 @@ print(franceDEM);
 
 // Add the layer to the map
 Map.addLayer(
-  fanceDEM,
+  franceDEM,
   {
-    min: -100,
-    max: 3000
+    min: 0,
+    max: 300
   },
   'France DEM');
