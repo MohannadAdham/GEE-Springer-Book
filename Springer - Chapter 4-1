@@ -15,3 +15,16 @@ Map.centerObject(sfoPoint);
 // Get an image from the imported MODIS MYD09GA collection
 var modisImage = mod09.filterDate('2020-02-01', '2020-03-01').first();
 
+// Use these MODIS bands for NIR, Red and Green respectively
+var modisBands = ['sur_refl_b02', 'sur_refl_b01', 'sur_refl_b04'];
+
+// Define visualization parameters for MODIS
+var modisVis = {
+  bands: modisBands,
+  min: 0,
+  max: 3000
+};
+
+// Add the MODIS image to the map
+Map.addLayer(modisImage, modisVis, 'MODIS');
+
