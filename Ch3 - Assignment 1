@@ -11,7 +11,7 @@ print(franceDEM);
 Map.centerObject(franceDEM, 5);
 
 // Define the palette
-var palette = palettes.colorbrewer.RdYlGn[9];
+var palette = palettes.colorbrewer.RdYlGn[9].reverse();
 
 // Add the layer to the map
 Map.addLayer(
