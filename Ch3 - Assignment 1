@@ -4,6 +4,9 @@ var franceDEM = ee.ImageCollection("IGN/RGE_ALTI/1M/2_0").first();
 // Print the layer to the console
 print(franceDEM);
 
+// Center the map
+Map.centerObject(franceDEM, 6);
+
 // Add the layer to the map
 Map.addLayer(
   franceDEM,
