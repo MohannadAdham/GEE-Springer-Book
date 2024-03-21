@@ -10,6 +10,9 @@ print(franceDEM);
 // Center the map
 Map.centerObject(franceDEM, 5);
 
+// Define the palette
+var palette = palettes.colorbrewer.RdYlGn[9];
+
 // Add the layer to the map
 Map.addLayer(
   franceDEM,
@@ -18,6 +21,6 @@ Map.addLayer(
     min: -200,
     max: 3200,
     // palette: ['black', '#63080b', '#9c090e', '#cf0c13', 'red', 'white']
-    palette: palettes.colorbrewer.RdYlGn[9]
+    palette: palette
   },
   'France DEM');
