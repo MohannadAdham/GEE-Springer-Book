@@ -12,7 +12,7 @@ Map.addLayer(
   franceDEM,
   {
     bands: ['MNT'],
-    min: -500,
+    min: -100,
     max: 3200,
     palette: ['black', '#9c090e', '#cf0c13', 'red', 'white']
   },
