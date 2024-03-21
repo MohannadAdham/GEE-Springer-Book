@@ -1,0 +1,9 @@
+///
+// Explore Spatial Resolution
+///
+
+// Define a region of interest as a Point at San Francisco Airport
+var sfoPoint = ee.Geometry.Point(-122.3774, 37.6194);
+
+// Center the map at the point
+Map.centerObject(sfoPoint);
