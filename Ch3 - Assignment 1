@@ -8,6 +8,7 @@ print(franceDEM);
 Map.addLayer(
   franceDEM,
   {
+    bands: ['MNT']
     min: 60,
     max: 150,
     palette: ['black', 'red']
