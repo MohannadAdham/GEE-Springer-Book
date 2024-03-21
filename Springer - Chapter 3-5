@@ -28,5 +28,17 @@ Map.addLayer(
     palette: populationPalette
   },
   'Gridded Population');
+
+// Import the NASA DEM dataset
+var nasaDEM = ee.Image('NASA/NASADEM_HGT/001');
+
+// Add the elevation layer to the map
+Map.addLayer(
+  nasaDEM,
+  {
+    min: 0,
+    max: 3000
+  },
+  'NASA DEM');
   
   
