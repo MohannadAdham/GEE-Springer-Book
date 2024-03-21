@@ -8,7 +8,8 @@ print(franceDEM);
 Map.addLayer(
   franceDEM,
   {
-    min: 0,
-    max: 150
+    min: 60,
+    max: 150,
+    palette: ['black', 'red']
   },
   'France DEM');
