@@ -28,3 +28,10 @@ var modisVis = {
 // Add the MODIS image to the map
 Map.addLayer(modisImage, modisVis, 'MODIS');
 
+// Get the scale (spatial resolution) of the data from the NIR band's projection
+var modisScale = modisImage.select('sur_refl_b02')
+  .projection()
+  .nominalScale();
+
+print('Modis NIR Scale:', modisScale);
+
