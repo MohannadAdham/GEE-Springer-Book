@@ -45,7 +45,7 @@ var modisVis = {
       max: 4000
   };
   
-Map.addLayer(modisDailyRecent, modisVis, 'MODIS Dily Composite');
+Map.addLayer(modisDailyRecent, modisVis, 'MODIS Daily Composite');
 
 // Import the MODIS monthly burned areas dataset. 
 var modisMonthly = ee.ImageCollection('MODIS/006/MCD64A1');
