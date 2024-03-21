@@ -10,3 +10,8 @@ var sfoPoint = ee.Geometry.Point(-122.3774, 37.6194);
 
 // Center the map at the point
 Map.centerObject(sfoPoint);
+
+// MODIS
+// Get an image from the imported MODIS MYD09GA collection
+var modisImage = mod09.filterDate('2020-02-01', '2020-03-01').first();
+
