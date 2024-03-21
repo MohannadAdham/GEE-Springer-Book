@@ -14,6 +14,6 @@ Map.addLayer(
     bands: ['MNT'],
     min: 0,
     max: 3000,
-    palette: ['black', 'red']
+    palette: ['black', 'red', 'white']
   },
   'France DEM');
