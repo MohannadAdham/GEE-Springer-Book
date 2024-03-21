@@ -36,8 +36,8 @@ var nasaDEM = ee.Image('NASA/NASADEM_HGT/001');
 Map.addLayer(
   nasaDEM,
   {
-    min: 0,
-    max: 3000
+    min: -100,
+    max: 2500
   },
   'NASA DEM');
   
