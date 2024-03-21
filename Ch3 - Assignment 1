@@ -9,8 +9,8 @@ Map.addLayer(
   franceDEM,
   {
     bands: ['MNT'],
-    min: 60,
-    max: 150,
+    min: 0,
+    max: 300,
     palette: ['black', 'red']
   },
   'France DEM');
