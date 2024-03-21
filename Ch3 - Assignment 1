@@ -1,3 +1,6 @@
+// Import the palettes community module
+var palettes = require('users/gena/packages:palettes');
+
 // Import DEM dataset of France
 var franceDEM = ee.ImageCollection("IGN/RGE_ALTI/1M/2_0").first();
 
@@ -14,6 +17,7 @@ Map.addLayer(
     bands: ['MNT'],
     min: -200,
     max: 3200,
-    palette: ['black', '#63080b', '#9c090e', '#cf0c13', 'red', 'white']
+    // palette: ['black', '#63080b', '#9c090e', '#cf0c13', 'red', 'white']
+    palette: palettes.colorbrewer.RdYlGn[9]
   },
   'France DEM');
