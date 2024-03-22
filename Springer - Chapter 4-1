@@ -146,3 +146,20 @@ tmChart.setOptions(chartStyle);
 
 // Print the chart
 print('TM Chart', tmChart);
+
+// Sentinel-2 has a 5 day revisit time
+var msiChart = ui.Chart.image.series({
+  imageCollection: msi
+    .select('B8')
+    .filterDate('2020-06-01', '2020-09-01'),
+  region: sfoPoint
+}).setSeriesNames(['NIR']);
+
+// Apply the previously defined custom style properties to the chart
+msiChart.setOptions(chartStyle);
+
+// Print the chart
+print('MSI Chart', msiChart);
+
+
+
