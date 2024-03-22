@@ -161,5 +161,15 @@ msiChart.setOptions(chartStyle);
 // Print the chart
 print('MSI Chart', msiChart);
 
+///
+// Explore Spectral Resolution
+//
 
+// Get the MODIS band names as an ee.List
+var modisBands = modisImage.bandNames();
 
+// Print the list
+print('MODIS Bands', modisBands);
+
+// Print the length of the list
+print('Length of the bands list:', modisBands.length());
