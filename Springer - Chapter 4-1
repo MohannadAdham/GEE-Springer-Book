@@ -68,7 +68,16 @@ var msiImage = msi
   .filterDate('2020-02-01', '2020-04-01')
   .first();
   
-
+// Display the MSI image as a false color composite
+Map.addLayer(
+  msiImage,
+  {
+    bands: ['B8', 'B4', 'B3'],
+    min: 0,
+    max: 2000
+  }, 'MSI');
+  
+  
 
 
 
