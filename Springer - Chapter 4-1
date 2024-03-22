@@ -1,7 +1,8 @@
 /**** Start of imports. If edited, may not auto-convert in the playground. ****/
 var mod09 = ee.ImageCollection("MODIS/061/MOD09A1"),
     tm = ee.ImageCollection("LANDSAT/LT05/C02/T1"),
-    msi = ee.ImageCollection("COPERNICUS/S2_HARMONIZED");
+    msi = ee.ImageCollection("COPERNICUS/S2_HARMONIZED"),
+    naip = ee.ImageCollection("USDA/NAIP/DOQQ");
 /***** End of imports. If edited, may not auto-convert in the playground. *****/
 ///
 // Explore Spatial Resolution
@@ -61,7 +62,7 @@ var tmScale = tmImage
   
 print('TM NIR scale:', tmScale);
 
-// MSI
+// MSI (MultiSpectral Instrument)
 // Filter MSI imagery by location and date
 var msiImage = msi
   .filterBounds(Map.getCenter())
@@ -84,6 +85,22 @@ var msiScale = msiImage
   .nominalScale();
   
 print('MSI scale:', msiScale);
+
+// NAIP (National Agriculture Imagery Program)
+// Get NAIP images for the study period and the region of interest
+var naipImage = naip
+  .filterBounds(Map.getCenter())
+  .filterDate('2018-01-01', '2018-12-31')
+  .first();
+
+// Display the NAIP mosaic as a color-IR composite
+Map.addLayer(
+  naipImage,
+  {
+    bands: ['N', 'R', 'G'],
+  }, 'NAIP');
+  
+
 
 
 
