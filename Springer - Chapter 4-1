@@ -118,3 +118,9 @@ var tmFiltered = tm
   .filterDate('1987-06-01', '1987-09-01');
   
 print('Landsat-5 series', tmFiltered);
+
+// Create a chart to see Landsat 5's 16 day revisit time
+var tmChart = ui.Chart.image.series({
+  imageCollection: tmFiltered.select('B4'),
+  region: sfoPoint
+}).setSeriesNames(['NIR']);
