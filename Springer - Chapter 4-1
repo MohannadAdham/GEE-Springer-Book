@@ -100,6 +100,14 @@ Map.addLayer(
     bands: ['N', 'R', 'G'],
   }, 'NAIP');
   
+// Get the NAIP resolution from the first image of the mosaic
+var naipScale = naipImage
+  .select('N')
+  .projection()
+  .nominalScale();
+
+print(naipScale);
+
 
 
 
