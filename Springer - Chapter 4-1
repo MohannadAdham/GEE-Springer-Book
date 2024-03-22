@@ -77,7 +77,13 @@ Map.addLayer(
     max: 2000
   }, 'MSI');
   
+// Get the scale of the MSI data from its projection
+var msiScale = msiImage
+  .select('B8')
+  .projection()
+  .nominalScale();
   
+print('MSI scale:', msiScale);
 
 
 
