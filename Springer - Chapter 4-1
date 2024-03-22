@@ -52,4 +52,13 @@ Map.addLayer(
     max: 100
   }, 'TM');
   
+// Get the scale of the TM data from its projection
+var tmScale = tmImage
+  .select('B4')
+  .projection()
+  .nominalScale();
+  
+print('TM NIR scale:', tmScale);
+
+
 
