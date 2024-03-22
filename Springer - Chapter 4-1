@@ -124,3 +124,25 @@ var tmChart = ui.Chart.image.series({
   imageCollection: tmFiltered.select('B4'),
   region: sfoPoint
 }).setSeriesNames(['NIR']);
+
+// Define a chart style that will let us see the individual dates.
+var chartStyle = {
+    hAxis: {
+        title: 'Date'
+    },
+    vAxis: {
+        title: 'NIR Mean'
+    },
+    series: {
+        0: {
+            lineWidth: 3,
+            pointSize: 6
+        }
+    },
+};
+
+// Apply custom style properties to the chart
+tmChart.setOptions(chartStyle);
+
+// Print the chart
+print('TM Chart', tmChart);
