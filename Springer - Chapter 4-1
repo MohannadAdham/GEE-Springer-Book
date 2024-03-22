@@ -1,6 +1,7 @@
 /**** Start of imports. If edited, may not auto-convert in the playground. ****/
 var mod09 = ee.ImageCollection("MODIS/061/MOD09A1"),
-    tm = ee.ImageCollection("LANDSAT/LT05/C02/T1");
+    tm = ee.ImageCollection("LANDSAT/LT05/C02/T1"),
+    msi = ee.ImageCollection("COPERNICUS/S2_HARMONIZED");
 /***** End of imports. If edited, may not auto-convert in the playground. *****/
 ///
 // Explore Spatial Resolution
@@ -59,6 +60,19 @@ var tmScale = tmImage
   .nominalScale();
   
 print('TM NIR scale:', tmScale);
+
+// MSI
+// Filter MSI imagery by location and date
+var msiImage = msi
+  .filterBounds(Map.getCenter())
+  .filterDate('2020-02-01', '2020-04-01')
+  .first();
+  
+
+
+
+
+
 
 
 
