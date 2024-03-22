@@ -108,3 +108,13 @@ var naipScale = naipImage
 
 print(naipScale);
 
+///
+// Explore Temporal Resolutioin
+///
+
+// Use print to see Landsat revisit time
+var tmFiltered = tm
+  .filterBounds(Map.getCenter())
+  .filterDate('1987-06-01', '1987-09-01');
+  
+print('Landsat-5 series', tmFiltered);
