@@ -173,3 +173,42 @@ print('MODIS Bands', modisBands);
 
 // Print the length of the list
 print('Length of the bands list:', modisBands.length());
+
+// Graph the MODIS spectral bands (bands 11-17).
+
+// Select only the reflectance bands of interest.
+var reflectanceImage = modisImage.select(
+    'sur_refl_b01',
+    'sur_refl_b02',
+    'sur_refl_b03',
+    'sur_refl_b04',
+    'sur_refl_b05',
+    'sur_refl_b06',
+    'sur_refl_b07'
+);
+
+// Define an object of customization parameters for the chart.
+var options = {
+    title: 'MODIS spectrum at SFO',
+    hAxis: {
+        title: 'Band'
+    },
+    vAxis: {
+        title: 'Reflectance'
+    },
+    legend: {
+        position: 'none'
+    },
+    pointSize: 3
+};
+
+// Make the chart.
+var modisReflectanceChart = ui.Chart.image.regions({
+    image: reflectanceImage,
+    regions: sfoPoint
+}).setOptions(options);
+
+// Display the chart
+print(modisReflectanceChart);
+
+
