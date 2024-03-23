@@ -25,6 +25,3 @@ var msiImages = msi
 // Count MSI images in the specified location and date
 var msiImageCount = msiImages.size();
 print('MSI Image Count:', msiImageCount);
-
-
-
