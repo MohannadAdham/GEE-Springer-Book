@@ -9,6 +9,9 @@ var tmImage = tm
   .filterBounds(sfoPoint)
   .filterDate('1987-03-01', '1987-08-01')
   .first();
+  
+// Print the TM image metadata
+print('TM metadata:', tmImage);
 
 // Get the landsat 5's band names as ee.List
 var tmBands = tmImage.bandNames();
