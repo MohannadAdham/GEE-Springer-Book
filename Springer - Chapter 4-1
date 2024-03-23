@@ -247,3 +247,30 @@ var eo1Chart = ui.Chart.image.regions({
 // Display the chart
 print(eo1Chart);
 
+///
+// Examine pixel quality
+//
+
+// Sentinel Quality Visualization
+var msiCloud = msi
+    .filterBounds(Map.getCenter())
+    .filterDate('2019-12-31', '2020-02-01')
+    .first();
+
+// Display the MSI image as a false color composite.
+Map.addLayer(msiCloud,
+    {
+        bands: ['B8', 'B4', 'B3'],
+        min: 0,
+        max: 2000
+    },
+    'MSI Quality Image');
+
+Map.addLayer(msiCloud,
+    {
+        bands: ['QA60'],
+        min: 0,
+        max: 2000
+    },
+    'Sentinel Quality Visualization');
+    
