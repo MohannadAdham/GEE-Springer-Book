@@ -1,5 +1,6 @@
 /**** Start of imports. If edited, may not auto-convert in the playground. ****/
-var mod09 = ee.ImageCollection("MODIS/061/MYD09A1");
+var mod09 = ee.ImageCollection("MODIS/061/MYD09A1"),
+    msi = ee.ImageCollection("COPERNICUS/S2_HARMONIZED");
 /***** End of imports. If edited, may not auto-convert in the playground. *****/
 // Create a point of interest geometry
 var poi = ee.Geometry.Point([-122.30144, 37.80215]);
@@ -15,3 +16,16 @@ print('MODIS Metadata:', modisImages);
 // Count Modis images in the specified location and date
 var mod09ImageCount = modisImages.size();
 print('Modis Image Count:', mod09ImageCount);
+
+// Filter Sentinel 2 MSI collection by location and date
+var msiImages = msi
+  .filterBounds(poi)
+  .filterDate('2017-01-01', '2017-12-31');
+
+// Count MSI images in the specified location and date
+var msiImageCount = msiImages.size();
+print('MSI Image Count:', msiImageCount);
+
+
+
+
