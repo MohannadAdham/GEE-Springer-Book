@@ -1,0 +1,14 @@
+/**** Start of imports. If edited, may not auto-convert in the playground. ****/
+var mod09 = ee.ImageCollection("MODIS/061/MYD09A1");
+/***** End of imports. If edited, may not auto-convert in the playground. *****/
+// Define a region of interest as a Point at San Francisco Airport
+var sfoPoint = ee.Geometry.Point(-122.3774, 37.6194);
+
+// Get an image from the imported modis collection
+var modisImage = mod09.selectDate('2020-02-01', '2020-03-01').first();
+
+// Get the scale of the sur_refl_b01 band from its projection
+var modisB01Scale = modisImage
+  .select('sur_refl_b01')
+  .projection()
+  .nominalScale();
