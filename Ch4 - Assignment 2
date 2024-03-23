@@ -46,7 +46,3 @@ var naipScale = naipImage
 
 print('NAIP Scale:', naipScale);
   
-
-
-
-
