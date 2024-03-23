@@ -1,14 +1,32 @@
 /**** Start of imports. If edited, may not auto-convert in the playground. ****/
-var mod09 = ee.ImageCollection("MODIS/061/MYD09A1");
+var mod09 = ee.ImageCollection("MODIS/061/MYD09A1"),
+    msi = ee.ImageCollection("COPERNICUS/S2_HARMONIZED");
 /***** End of imports. If edited, may not auto-convert in the playground. *****/
 // Define a region of interest as a Point at San Francisco Airport
 var sfoPoint = ee.Geometry.Point(-122.3774, 37.6194);
 
 // Get an image from the imported modis collection
-var modisImage = mod09.selectDate('2020-02-01', '2020-03-01').first();
+var modisImage = mod09.filterDate('2020-02-01', '2020-03-01').first();
 
-// Get the scale of the sur_refl_b01 band from its projection
+// Get the scale of the sur_refl_b01 (red) band from its projection
 var modisB01Scale = modisImage
   .select('sur_refl_b01')
   .projection()
   .nominalScale();
+  
+print('Modis Red Scale:', modisB01Scale);
+
+// Filter MSI imagery by location and date
+var msiImage = msi
+  .filterBounds(sfoPoint)
+  .filterDate('2020-02-01', '2020-04-01')
+  .first();
+  
+  
+// Get the scale of the MSI data from its projection
+var msiB5Scale = msiImage
+  .select('B5')
+  .projection()
+  .nominalScale();
+
+print('MSI B5 (Red Edge 1) Scale:', msiScale);
