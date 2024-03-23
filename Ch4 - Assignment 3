@@ -1,0 +1,17 @@
+/**** Start of imports. If edited, may not auto-convert in the playground. ****/
+var mod09 = ee.ImageCollection("MODIS/061/MYD09A1");
+/***** End of imports. If edited, may not auto-convert in the playground. *****/
+// Create a point of interest geometry
+var poi = ee.Geometry.Point([-122.30144, 37.80215]);
+
+// Filter MODIS collection by location and date
+var modisImages = mod09
+  .filterBounds(poi)
+  .filterDate('2017-01-01', '2017-12-31');
+
+// Print the metadata of the collection
+print('MODIS Metadata:', modisImages);
+
+// Count Modis images in the specified location and date
+var mod09ImageCount = modisImages.size();
+print('Modis Image Count:', mod09ImageCount);
