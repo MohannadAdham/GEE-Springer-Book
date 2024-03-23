@@ -1,0 +1,4 @@
+/**** Start of imports. If edited, may not auto-convert in the playground. ****/
+var tm = ee.ImageCollection("LANDSAT/LT05/C02/T1");
+/***** End of imports. If edited, may not auto-convert in the playground. *****/
+// Get the landsat 5's band names as ee.List
