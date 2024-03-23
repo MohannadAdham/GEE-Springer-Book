@@ -1,6 +1,7 @@
 /**** Start of imports. If edited, may not auto-convert in the playground. ****/
 var mod09 = ee.ImageCollection("MODIS/061/MYD09A1"),
-    msi = ee.ImageCollection("COPERNICUS/S2_HARMONIZED");
+    msi = ee.ImageCollection("COPERNICUS/S2_HARMONIZED"),
+    naip = ee.ImageCollection("USDA/NAIP/DOQQ");
 /***** End of imports. If edited, may not auto-convert in the playground. *****/
 // Define a region of interest as a Point at San Francisco Airport
 var sfoPoint = ee.Geometry.Point(-122.3774, 37.6194);
@@ -30,3 +31,22 @@ var msiB5Scale = msiImage
   .nominalScale();
 
 print('MSI B5 (Red Edge 1) Scale:', msiB5Scale);
+
+// Get NAIP images for the study period and the region of interest
+var naipImage = naip
+  .filterBounds(sfoPoint)
+  .filterDate('2018-01-01', '2018-12-31')
+  .first();
+  
+// Get the scale of the NAIP R band from its projection
+var naipScale = naipImage
+  .select('R')
+  .projection()
+  .nominalScale();
+
+print('NAIP Scale:', naipScale);
+  
+
+
+
+
