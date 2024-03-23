@@ -29,4 +29,4 @@ var msiB5Scale = msiImage
   .projection()
   .nominalScale();
 
-print('MSI B5 (Red Edge 1) Scale:', msiScale);
+print('MSI B5 (Red Edge 1) Scale:', msiB5Scale);
