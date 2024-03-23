@@ -1,4 +1,17 @@
 /**** Start of imports. If edited, may not auto-convert in the playground. ****/
 var tm = ee.ImageCollection("LANDSAT/LT05/C02/T1");
 /***** End of imports. If edited, may not auto-convert in the playground. *****/
+// Define a region of interest as a Point at San Francisco Airport
+var sfoPoint = ee.Geometry.Point(-122.3774, 37.6194);
+
+// Filter TM (Thematic Mapper) imagery by location and date
+var tmImage = tm
+  .filterBounds(sfoPoint)
+  .filterDate('1987-03-01', '1987-08-01')
+  .first();
+
 // Get the landsat 5's band names as ee.List
+var tmBands = tmImage.bandNames();
+
+// Print the band names
+print('TM Band Names:', tmBands);
