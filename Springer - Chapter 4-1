@@ -274,3 +274,12 @@ Map.addLayer(msiCloud,
     },
     'Sentinel Quality Visualization');
     
+///
+// Metadata
+///
+print('MSI Image Metadata:', msiImage);
+
+// Image-level Cloud info
+var msiCloudiness = msiImage.get('CLOUDY_PIXEL_PERCENTAGE');
+
+print('MSI CLOUDY_PIXEL_PERCENTAGE:', msiCloudiness);
