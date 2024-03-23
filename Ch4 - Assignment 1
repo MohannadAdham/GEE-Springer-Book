@@ -15,3 +15,42 @@ var tmBands = tmImage.bandNames();
 
 // Print the band names
 print('TM Band Names:', tmBands);
+
+// Select only the reflectance bands of interest
+var reflectanceImage = tmImage.select(
+  'B1',
+  'B2',
+  'B3',
+  'B4',
+  'B5',
+  'B6',
+  'B7');
+
+// Define an object of customization parameters for the chart.
+var options = {
+  title: 'TM spectrum at SFO',
+  hAxis: {
+    title: 'Band'
+  },
+  vAxis: {
+    title: 'Reflectance'
+  },
+  legend: {
+    position: 'none'
+  },
+  pointSize: 3
+};
+
+// Make the chart
+// var tmReflectanceChart = ui.Chart.image.regions({
+//     image: reflectanceImage,
+//     regions: sfoPoint
+// }).setOptions(options);
+
+var tmReflectanceChart = ui.Chart.Image.regions({
+  image: reflectanceImage,
+  regions: sfoPoint
+}).setOptions(options);
+
+// Display the chart
+print(tmReflectanceChart);
