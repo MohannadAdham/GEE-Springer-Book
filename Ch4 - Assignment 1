@@ -47,7 +47,7 @@ var options = {
 //     regions: sfoPoint
 // }).setOptions(options);
 
-var tmReflectanceChart = ui.Chart.Image.regions({
+var tmReflectanceChart = ui.Chart.image.regions({
   image: reflectanceImage,
   regions: sfoPoint
 }).setOptions(options);
