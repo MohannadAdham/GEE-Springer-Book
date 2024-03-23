@@ -2,7 +2,8 @@
 var mod09 = ee.ImageCollection("MODIS/061/MOD09A1"),
     tm = ee.ImageCollection("LANDSAT/LT05/C02/T1"),
     msi = ee.ImageCollection("COPERNICUS/S2_HARMONIZED"),
-    naip = ee.ImageCollection("USDA/NAIP/DOQQ");
+    naip = ee.ImageCollection("USDA/NAIP/DOQQ"),
+    eo1 = ee.ImageCollection("EO1/HYPERION");
 /***** End of imports. If edited, may not auto-convert in the playground. *****/
 ///
 // Explore Spatial Resolution
@@ -211,4 +212,38 @@ var modisReflectanceChart = ui.Chart.image.regions({
 // Display the chart
 print(modisReflectanceChart);
 
+// Get the EO-1 band names as an ee.List
+var eo1Image = eo1
+  .filterDate('2015-01-01', '2016-01-01')
+  .first();
+  
+// Extract the EO-1 band names
+var eo1Bands = eo1Image.bandNames();
+
+// Print the list of band names
+print('EO-1 Bands:', eo1Bands);
+
+// Create an options object for our chart.
+var optionsEO1 = {
+    title: 'EO1 spectrum',
+    hAxis: {
+        title: 'Band'
+    },
+    vAxis: {
+        title: 'Reflectance'
+    },
+    legend: {
+        position: 'none'
+    },
+    pointSize: 3
+};
+
+// Make the chart and set the options.
+var eo1Chart = ui.Chart.image.regions({
+    image: eo1Image,
+    regions: ee.Geometry.Point([6.10, 81.12])
+}).setOptions(optionsEO1);
+
+// Display the chart
+print(eo1Chart);
 
